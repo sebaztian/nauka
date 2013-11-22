@@ -103,7 +103,7 @@ def check():
         quest=remove_stress_marks(request.form['question'])
         answer=remove_stress_marks(request.form['answer'])
         if answer==quest:          
-            return "OK! Brakuje akcentu. "+request.form['answer']+" "+request.form['question']+" <input type='button' onclick='window.location.reload()' value='next'/>"
+            return "OK! Brakuje akcentu. "+request.form['answer']
     return "NOT OK!!! "+request.form['question']
 
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
