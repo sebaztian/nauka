@@ -1,0 +1,98 @@
+<html>
+ <head>
+  <style>
+    body
+    {
+    background-color:#F0F0F0;    
+    }
+    h2
+    {
+    padding-top:5%;
+    font-size:5em;
+    color:black;
+    text-align:center;
+    }
+    .ianswer
+    {
+    font-size:4em;
+    color:#325532;
+    text-align:center;
+    }
+    div.answer
+    {
+    text-align:center;
+    }
+    div#result
+    {
+    font-size:4em;
+    text-align:center;
+    }
+    .ibutton
+    {
+    font-size:4em;
+    color:#725532;
+    text-align:center;
+    }
+    div.bottom
+    {
+    background-color:#000;
+    text-align:center;
+position:fixed;     bottom: 0; 
+left:50%;     margin-left:-50%; 
+width:100%
+    }
+  </style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script>
+   $(document).ready(function(){
+    $("#ianwser").focus(); 
+    $('#ianwser').on('input', function() {
+    var answer=$('#ianwser').val();
+    if (answer.indexOf("'") > -1)
+{
+        answer=answer.replace("я'","я́");
+        answer=answer.replace("е'","е́");
+        answer=answer.replace("ы'","ы́");
+        answer=answer.replace("о'","о́");
+        answer=answer.replace("у'","у́");
+        answer=answer.replace("а'","а́");
+        answer=answer.replace("и'","и́");
+        answer=answer.replace("ю'","ю́");
+        answer=answer.replace("э'","э́");
+        $('#ianwser').val(answer);
+}
+    
+    }); 
+    $( "#check" ).submit(function( event ) {
+        var postData = $(this).serializeArray();
+        $.post( "/check", $('#check').serialize())
+            .done(function( data ) {
+                $('div#result').html(data); 
+        });
+        event.preventDefault();
+    });        
+   });
+
+
+  </script>
+
+ </head>
+ <body>
+   <h2>{{word[1]}}</h2>
+   <div class="answer">
+   <form id="check">
+     <input type="hidden" name="question" value="{{word[0]}}"/>
+     <input type="text" class="ianswer" name="answer" id="ianwser" value="" autocomplete="off"/>
+     <input type="submit" value="OK" class="ianswer"/>
+   </form>
+   </div>
+   <div  id="result"></div>
+   <div class="bottom">
+   <input type="button" value="Następne" class="ibutton"  onclick="location.href='/translate'" />
+   <input type="button" value="Etap I" class="ibutton"  onclick="location.href='/show'" />
+   <input type="button" value="Etap II" class="ibutton"  onclick="location.href='/choose'" />
+   <input type="button" value="Zmień słowa" class="ibutton"  onclick="location.href='/change'" />
+   </div>
+ </body>
+</html>

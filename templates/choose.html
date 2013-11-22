@@ -1,0 +1,85 @@
+<html>
+ <head>
+  <style>
+    body
+    {
+    background-color:#F0F0F0;    
+    }
+    h2
+    {
+    font-size:5em;
+    color:black;
+    text-align:center;
+    }
+    .option
+    {
+    font-size:3em;
+    color:#325532;
+    text-align:center;
+    }
+    .option_good
+    {
+    font-size:3em;
+    color:#325532;
+    text-align:center;
+    }
+    .bad
+    {
+    font-size:3em;
+    color:#FF5532;
+    text-align:center;
+    }
+    .good
+    {
+    font-size:3em;
+    color:#32FF32;
+    text-align:center;
+    }
+    .ibutton
+    {
+    font-size:4em;
+    color:#725532;
+    text-align:center;
+    }
+    div.bottom
+    {
+    background-color:#000;  
+    text-align:center;
+position:fixed;     bottom: 0; 
+left:50%;     margin-left:-50%; 
+width:100%
+    }
+  </style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script>
+         $(document).ready(function(){
+         
+            $('.option').click(function() {
+                $(this).addClass("bad");
+               });
+            $('.option_good').click(function() {
+                $(this).addClass("good");
+                setTimeout(function() {
+                  window.location.href = "/choose";
+                }, 500);
+               });            
+         });
+
+
+  </script>
+ </head>
+ <body>
+   <h2>{{word[1]}}</h2>
+<hr/>
+   {%for choise in choose_list%}
+   <h3 class="option{%if word[0]==choise%}_good{%endif%}">{{choise}}</h3>
+   {%endfor%}
+</div>   
+   <div class="bottom">
+   <input type="button" value="Etap I" class="ibutton"  onclick="location.href='/show'" />
+   <input type="button" value="Etap III" class="ibutton"  onclick="location.href='/translate'" />
+   <input type="button" value="Zmień słowa" class="ibutton"  onclick="location.href='/change'" />
+   </div>
+ </body>
+</html>

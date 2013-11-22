@@ -1,0 +1,48 @@
+<html>
+ <head>
+  <style>
+ body 
+    {
+    background-color:#F0F0F0;    
+    }
+    h2
+    {
+    padding-top:5%;
+    font-size:5em;
+    color:black;
+    text-align:center;
+    }
+    h3
+    {
+    font-size:4em;
+    color:#325532;
+    text-align:center;
+    }
+    .ibutton
+    {
+    font-size:4em;
+    color:#725532;
+    text-align:center;
+    }
+    div.bottom
+    {
+    background-color:#000;
+    text-align:center;
+position:fixed;     bottom: 0; 
+left:50%;     margin-left:-50%; 
+width:100%
+    }
+  </style>
+ </head>
+ <body >
+<div onclick="window.location.href='/show'">
+   <h2>{{word[0]}}</h2>
+   <h3>{{word[1]}}</h3>
+</div>   
+   <div class="bottom">
+   <input type="button" value="Następne" class="ibutton"  onclick="location.href='/show'" />
+   <input type="button" value="Etap II" class="ibutton"  onclick="location.href='/choose'" />
+   <input type="button" value="Zmień słowa" class="ibutton"  onclick="location.href='/change'" />
+   </div>
+ </body>
+</html>
