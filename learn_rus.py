@@ -30,7 +30,7 @@ def check_session():
             
 def get_words(number=25):
     random_list=[]
-    while len(random_list)<number:
+    while (len(random_list)<number or len(random_list)==len(word_list)):
         random_word=word_list[random.randrange(0,len(word_list))]
         if random_word not in random_list:
             random_list.append(random_word)
@@ -98,12 +98,13 @@ def remove_stress_marks(text):
 @app.route("/check", methods=['GET','POST'])    
 def check():   
     if request.form and 'answer' in request.form and 'question' in request.form:
+
         if request.form['answer'].strip()==request.form['question'].strip():
             return render_template('ok_reload.html')
         quest=remove_stress_marks(request.form['question'])
         answer=remove_stress_marks(request.form['answer'])
         if answer==quest:          
-            return "OK! Brakuje akcentu. "+request.form['answer']
+            return "OK! Brakuje akcentu. "+request.form['question']
     return "NOT OK!!! "+request.form['question']
 
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'

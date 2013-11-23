@@ -3,7 +3,7 @@
 сковорода́  - patelnia
 стекло́  - szkło
 ло́жка - łyżka
-ви́лка - widelec
+ви́лка - widelec,wtyczka
 таре́лка - tależ
 кру́жка - kubek
 горе́ть - palić się, płonąć 
@@ -58,6 +58,8 @@
 называ́ем-nazywamy
 называ́ете-nazywacie
 называ́ют-nazywają
+стира́льная маши́на - pralka (2sł)
+стира́лька -pralka (1 sł)
 му́сор -śmieć,śmieci
 му́сорка - śmietnik
 глаго́л - czasownik
@@ -185,3 +187,359 @@
 сего́дня - dziś
 вчера́ - wczoraj
 за́втра - jutro
+еда́ - jedzenie
+есть - jeść
+ем-jem
+ешь-jesz
+ест-je
+еди́м-jemy
+еди́те-jecie
+едя́т-jedzą
+ел-jadł
+е́ла-jadła
+е́ло-jadło
+е́ли-jedli
+дверь - drzwi
+стена́ - ściana
+компью́тер - komputer
+монито́р - monitor
+стол - stół
+кре́сло - fotel
+табуре́тка -stołek,taboret
+телеви́зор - telewizor
+стул-krzesło
+дива́н - kanapa
+чехо́л -    pokrowiec, futerał
+поду́шка - poduszka
+усили́тель - wzmacniacz
+при́нтер - drukarka
+потоло́к - sufit
+пол - podłoga
+у́гол - róg
+про́вод - przewód
+ка́рта - mapa, karta
+коло́да карт - talia kart
+кни́га - książka
+тюль - firnaka
+што́ра - zasłona
+диск - dysk, tarcza, koło, płyta
+коло́нка - kolumna, piecyk gazowy,  pompa
+ша́пка - czapka
+ке́пка - czapka z daszkiem
+ко́жа - skóra
+ко́жаный - skórzany
+де́рево - drzewo
+дере́вня - wieś
+жить в дере́вне - mieszkać na wsi
+зелёный - zielony
+голубо́й - błękitny, gej
+штаны́  - spodnie (na sz)
+брю́ки  -spodnie (na b)
+костю́м - ubranie,  garnitur
+толосто́вка- bluza (na t) 
+блу́за - bluza (na b)
+ремни́ безопа́сности - pasy bezpieczeństwa
+носо́к - skarpeta
+носки́ - skarpeta
+ма́йка - podkoszulek
+руба́шка - koszula
+жиле́т - kamizelka
+пыль - pył
+пылесо́с - odkurzacz
+велосипе́д - rower
+е́здить на велосипе́де - jeździć na rowerze
+седло́ - siodło, siodełko
+звоно́к - dzwonek
+колесо́ - koło
+педа́ль - pedał
+насо́с - pompa
+во́здух - powietrze
+бага́жник - bagażnik
+фа́ра - reflektor
+свет - światło
+цепь - łańcuch
+сейф - sejf
+телефо́н - telefon
+спа́льня - sypialnia
+спать - spać
+сплю-śpię
+спишь-śpisz
+спит-śpi
+спим-śpimy
+спи́те-śpicie
+спят-śpią
+спал-spał
+спала́-spała
+спало́-spało
+спа́ли-spali
+спи-śpij
+сла́дость - słodycz
+сла́дости - słodyczе
+варе́нье - konfitura
+конфе́ты- cukierki
+конфе́та - cukierek
+электри́чество - elektryczność
+фона́рь - latarnia
+каранда́ш - ołówek
+лине́йка - linijka
+калькуля́тор - kalkulator
+вокза́л - dworzec
+по́езд -    pociąg
+зал ожида́ния - poczekalnia
+расписа́ние - rozkład
+ка́сса - kasa
+перехо́д - przejście
+подзе́мный - podziemny
+земля́ - ziemia
+око́шко - okienko
+а́ист - bocian
+сова́ - sowa
+воробе́й - wróbel
+куку́шка - kukułka
+рука́ - ręka
+рот - usta
+кра́сный - czerwony
+си́ний - granatowy, ciemnoniebieski
+се́рый - szary
+письмо́  - list
+конве́рт - koperta
+ма́рка -    znaczek
+почто́вый и́ндекс - kod pocztowy
+по́вар - kucharz
+инжене́р - inżynier
+сле́сарь - ślusarz
+врач  - lekarz
+учи́тельница - nauczycielka
+учи́тель - nauczyciel
+продаве́ц - sprzedawca
+продавщи́ца - sprzedawczyni
+бараба́н - bęben
+труба́ - trąbka, rura, komin, luneta
+река́ - rzeka
+теа́тр - teatr
+актёр - aktor
+мы́ло - mydło
+зубна́я па́ста - pasta do zębów
+зубна́я щётка - szczoteczka do zębów
+расчёска - grzebień
+духи́  - perfumy
+ду́хи - duchy
+че́рез - przez
+дыра́ -dziura
+ды́рка - dziurka
+выгля́дывать - wyglądać
+вы́гляжу-wyglądam
+вы́глядишь-wyglądasz
+вы́глядит - wygląda
+вы́глядим-wyglądam
+вы́глядите-wyglądacie
+вы́глядят-wyglądają
+куда́ - dokąd,     gdzie
+где -gdzie
+отту́да - stamtąd
+когда́ - kiedy
+когда́-нибу́дь - kiedyś
+никогда -  nigdy
+го́род - miasto
+за́мок - zamek (budowla)
+замо́к - zamek (w drzwiach)
+пятно́ - plama
+остана́вливать ter. lp остана́влива|ю, ~ешь, ~ет; lm ~ем, ~ете, ~ют; przesz. lp ~л / ~ла / ~ло; lm ~ли; rozk. ~й; ims. ~ющий, ~вший, ~я, ~емый   zatrzymywać
+показа́ть - pokazać
+ przysz. lp покажу́, пока́жешь, пока́жет; lm пока́жем, пока́жете, пока́жут; przesz. lp показа́л / показа́ла / показа́ло; lm показа́ли; rozk. lp покажи́; 2 os. lm покажи́те
+вернуться - wrócić
+верну́ться; przysz. lp верну́сь, вернёшься, вернётся; lm вернёмся, вернётесь, верну́ться; przesz. lp верну́лся / верну́лась / верну́лось; lm верну́лись; rozk. lp верни́сь; lm верни́тесь
+пое́хать - pojechać
+przysz. lp пое́ду, пое́дешь, пое́дет; lm пое́дем, пое́дете, пое́дут; przesz. lp пое́хал / пое́хала / пое́хало; lm пое́хали; rozk. lp поезжа́й, не е́зди
+е́хать - jechać
+ter. lp е́ду, е́дешь, е́дет; lm е́дем, е́дете, е́дут; przesz. lp е́хал / е́хала / е́хало; lm е́хали; rozk. lp поезжа́й, не е́зди
+уве́рен - pewien
+до встре́чи - do zobaczenia
+до свида́ния - do widzenia 
+авто́бусный вокза́л -dworzec autobusowy
+железнодоро́жный вокза́л -dworzec kolejowy
+по́мнить - pamiętać
+ter. lp по́мню, по́мнишь, по́мнит; lm по́мним, по́мните, по́мнят; przesz. lp по́мнил / по́мнила / по́мнило; lm по́мнили; rozk. lp по́мни; ims. по́мнящий, по́мнивший, по́мня, по́мнимый
+запо́мнить - zapamiętać
+запо́мню -zapamiętam
+запо́мнишь -zapamiętasz
+запо́мнит-zapamięta
+запо́мним-zapamiętamy
+запо́мните-zapamiętacie
+запо́мнят-zapamiętają
+запо́мнил-zapamiętał
+запо́мнила-zapamiętała
+запо́мнило-zapamiętało
+запомина́ть - zapamiętywać 
+; ter. lp запомина́|ю, ~ешь, ~ет; lm ~ем, ~ете, ~ют; przesz. lp ~л / ~ла / ~ло; lm ~ли; rozk. ~й; ims. ~ющий, ~вший, ~я, ~емый
+забы́ть - zapomnieć
+забу́ду-zapomnę
+забу́дешь-zapomnisz
+забу́дет-zapomnie
+забу́дем-zapominmy
+забу́дете-zapomnicie
+забу́дут-zapomni
+забы́л-zapomniał
+забы́ла-zapomniała
+забы́ло-zapomniało
+забы́ли-zapomnieli
+забу́дь-zapomnij
+забу́дьте-zapomnijcie
+пого́да     -     pogoda
+до́ждь -deszcz
+жа́рко -  gorąco
+xólodno -chłodno
+тепло́-ciepło
+зонт-parasol
+спа́льный мешо́к - śpiwór (2 słowa)
+спа́льник -śpiwór(jedno słowo)
+приключе́ние - przygoda
+путеше́ствие - podróż
+отку́да ты? - skąd jesteś?
+спра́шивать - pytać
+;ter. lp спра́шиваю, спра́шиваешь, спра́шивает; lm спра́шиваем, спра́шиваете, спра́шивают; przesz. lp спра́шивал / спра́шивала / спра́шивало; lm спра́шивали; rozk. lp спра́шивай; ims.  
+вре́мя - czas 
+пожа́луйста - proszę
+уже́ - już
+окра́ина го́рода - przedmieście
+окра́ина - kraniec
+нельзя́ - nie można
+здесь нельзя́ кури́ть -  tu nie można palić
+фотографи́ровать - fotografować
+еда́ - jedzenie
+во вре́мя еды́ - w czasie posiłku
+о́вощи - warzywa
+зда́ние - budynek
+дета́ль - szczegół, detal
+подро́бность - szczegół
+по́весть - opowieść
+пове́рх - sponad,na
+кли́чка соба́ки - imię psa
+кли́чка-przezwisko
+и́мя - imię
+вку́сно - smaczne
+вку́сный - smaczny
+безвку́сный - bez smaku, niegustowny
+везде́ - wszędzie
+нигде́ - nigdzie
+никуда́ - nigdzie
+никуда́ не пое́хал - nigdzie nie pojechał
+о́зеро - jezioro
+возле - obok
+поворо́т - skręt, obrót
+повора́чивать - skręcać
+повора́чивать нале́во - skręcać w lewo
+повора́чивать обра́тно - zawracać
+перекрёсток - skrzyżowanie
+перехо́д - przejście
+пешехо́дный перехо́д - przejście dla pieszych
+приходи́ться - trafiać, wypadać, okazywać się odpowiednim
+пое́здка - wyjazd
+весь день - przez cały dzień
+весь день ничего́ не де́лать - nic nie robić cały dzień
+показать - pokazać
+показа́ть przysz. lp покажу́, пока́жешь, пока́жет; lm пока́жем, пока́жете, пока́жут; przesz. lp показа́л / показа́ла / показа́ло; lm показа́ли; rozk. lp покажи́; 2 os. lm покажи́те
+показывать - pokazywać
+пока́зывать ter. lp пока́зываю, пока́зываешь, пока́зывает; lm пока́зываем, пока́зываете, пока́зывают; przesz. lp пока́зывал / пока́зывала / пока́зывало; lm пока́зывали; rozk. lp пока́зывай
+де́вушка - dziewczyna
+останусь - zostanę
+оставаться - zostawać
+остава́ться ter. lp остаю́сь, остаёшься, остаётся; lm остаёмся, остаётесь, остаю́тся; :przesz. lp остава́лся / остава́лась / остава́лось; lm остава́лись; rozk. lp остава́йся; ims.
+остаться -zostać
+оста́ться przysz. lp оста́нусь, оста́нешься, оста́нется; lm оста́немся, оста́нетесь, оста́нутся; przesz. lp оста́лся / оста́лась / оста́лось; lm оста́лись; rozk. lp оста́нься; ims.
+у́тром - rankiem
+ве́чером - wieczorem
+понра́виться- spodobać się
+нра́виться - podobać się
+нра́виться ter. lp нра́влюсь, нра́вишься, нра́вится; lm нра́вимся, нра́витесь, нра́вятся; przesz. lp нра́вился / нра́вилась / нра́вилось; lm нра́вились; rozk. lp нра́вься; ims.
+разгова́ривать -    rozmawiać
+национа́льный - narodowy
+национа́льность - narodowość
+библиоте́ка - biblioteka
+внутри́ - wewnątrz
+внутрь - do środka
+писа́тельница - pisarka
+писа́тель - pisarz
+найти́ -  znaleźć
+найти́ przysz. lp найду́, найдёшь, найдёт; lm найдём, найдёте, найду́т; przesz. lp нашёл / нашла́ / нашло́; lm нашли́; :tryb rozkazujący 2 os. lp найди́; 2 os. lm найди́те
+находи́ть - znajdować
+находи́ть ter. lp нахожу́, нахо́дишь, нахо́дит; lm нахо́дим, нахо́дите, нахо́дят; przesz. lp находи́л / находи́ла / находи́ло; lm находи́ли; rozk. lp находи́; ims.
+потеря́ть -  zgubić, stracić
+теря́ть - tracić, gubić
+потеря́ть przysz. lp потеря́ю, потеря́ешь, потеря́ет; lm потеря́ем, потеря́ете, потеря́ют; przesz. lp потеря́л / потеря́ла / потеря́ло; lm потеря́ли; rozk. lp потеря́й
+ску́чный - nudny
+вме́сте - razem
+вме́сто - zamiast
+незави́симость - niezależność
+сле́дующий - następny
+предыду́щий -  poprzedni
+сейча́с  -  teraz,     w tej chwili(na s)
+тепе́рь  -   teraz(na t)
+тогда́  -  wtedy,   w takim razie, to
+вопро́с  -  pytanie
+вообще́ - w ogóle, ogólnie biorąc
+в о́бщем - ogólnie
+в о́бщем и це́лом - ogólnie rzecz biorąc
+подро́бно -  szczegółowo,dokładnie    
+просну́ться - obudzić się
+засну́ть - zasnąć
+занима́ть -zajmować
+безопа́сность - bezpieczeństwo
+опа́сность - niebezpieczeństwo
+часть - część
+тяжело́ - ciężko
+лёгкий - lekki
+быть до́лжным - musieć
+снача́ла - najpierw
+ката́ться - toczyć się, jeździć
+бу́лочная - piekarnia
+ра́зный - różny
+кры́ша - dach
+про́бки - korki
+про́бка -korek
+сюда́ - tutaj(kierunek)
+туда́ -  tam(kierunek)
+здесь-tutaj(miejsce) 
+там-tam(miejsce)
+листо́к - kartka, listek
+листо́к бума́ги - kartka papieru
+бума́га - papier
+лист - liść,kartka,lista
+занима́ться - zajmować się, uczyć się
+тетра́дь - zeszyt
+убира́ть - sprzątać
+убо́рка -  	sprzątanie
+печа́тать - drukować 
+распечатанный - wydrukowany
+распечатать - wydrukować
+отве́тить - odpowiedzieć
+przysz. lp отве́чу, отве́тишь, отве́тит; lm отве́тим, отве́тите, отве́тят; przesz. lp отве́тил / отве́тила / отве́тило; lm отве́тили; rozk. lp отве́ть; ims.
+отвеча́ть -  odpowiadać
+ter. lp отвеча́ю, отвеча́ешь, отвеча́ет; lm отвеча́ем, отвеча́ете, отвеча́ют; przesz. lp отвеча́л / отвеча́ла / отвеча́ло; lm отвеча́ли; rozk. lp отвеча́й; 2 os. lm отвеча́йте
+отве́т - odpowiedź
+коне́чно - oczywiście
+прекра́сно - świetnie
+прекра́сный - piękny
+проща́ние -pożegnanie
+проща́ться -  żegnać się
+кора́бль - statek
+косми́ческий кора́бль - statek kosmiczny
+осо́бенный - szczególny
+продолжа́ть  - kontynuować
+ter. lp продолжа́ю, продолжа́ешь, продолжа́ет; lm продолжа́ем, продолжа́ете, продолжа́ют; przesz. lp продолжа́л / продолжа́ла / продолжа́ло; lm продолжа́ли; rozk. lp продолжа́й; 2 os. lm продолжа́йте
+вот-oto
+вот и всё - i to wszystko
+неуже́ли -czyżby, czy naprawdę
+ра́зве - czyli
+пры́гать- skakać
+действи́тельно - rzeczywiście
+kружо́к- kółko(spotkania)
+зна́ния - wiedza
+зна́ние - znajomość
+уме́ние - umiejętność
+необходи́мый - niezbędny
+покида́ть - opuszczać
+рассве́т - brzask,świt
+зака́т - zachód(słońca)
+по́зже всего́ - najpóźniej
+по́зже - później 
