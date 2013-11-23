@@ -20,9 +20,9 @@ app = Flask(__name__)
 def init():
 
     for line in open('dict.txt','r').readlines():
-        if '-' in line:
+        if '-' in line and line.strip()[0]!='#':
             split_res=line.split('-')
-            word_list.append([split_res[0].strip(),split_res[1].strip()])
+            word_list.append([split_res[0].strip(),split_res[1].strip(),0])
 
 def check_session():
     if 'word_list' not in session:
@@ -48,7 +48,7 @@ def menu():
 @app.route("/change") 
 def change():  
     get_words_to_session()
-    return redirect('/')
+    return render_template('change.html',word_list=session['word_list'])
 
 @app.route("/show", methods=['GET','POST'])
 @app.route("/show/<int:wid>", methods=['GET','POST'])
@@ -94,17 +94,32 @@ def remove_stress_marks(text):
     text=text.replace('э́','э')   
     text=text.replace('а́','а')
     return text
-    
+
+
+def add_points(points,word):
+    local_word_list=session['word_list']
+    for element in local_word_list:
+        if element[0]==word:
+            element[2]+=points
+            break
+    local_word_list[:] = [tup for tup in local_word_list if tup[2]<50]
+    session['word_list']=local_word_list
+    print session['word_list']
+
 @app.route("/check", methods=['GET','POST'])    
 def check():   
     if request.form and 'answer' in request.form and 'question' in request.form:
-
         if request.form['answer'].strip()==request.form['question'].strip():
+            add_points(5,request.form['question'])
+            if len(session['word_list'])==0:
+                return redirect('/change')
             return render_template('ok_reload.html')
         quest=remove_stress_marks(request.form['question'])
         answer=remove_stress_marks(request.form['answer'])
-        if answer==quest:          
+        if answer==quest:     
+            add_points(-1,request.form['question'])
             return "OK! Brakuje akcentu. "+request.form['question']
+    add_points(-3,request.form['question'])
     return "NOT OK!!! "+request.form['question']
 
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
