@@ -1,0 +1,49 @@
+<html>
+ <head>
+  <style>
+    body
+    {
+    background-color:#F0F0F0;    
+    }
+    h2
+    {
+    padding-top:5%;
+    font-size:5em;
+    color:black;
+    text-align:center;
+    }
+    h3
+    {
+    font-size:4em;
+    color:#325532;
+    text-align:center;
+    }
+    .ibutton
+    {
+    font-size:4em;
+    color:#725532;
+    text-align:center;
+    }
+    div.center
+    {
+    text-align:center;
+    }
+  </style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script>
+         $(document).ready(function(){
+         
+            setTimeout(function() {
+              window.location.href = "/";
+            }, 1000);           
+         });
+
+
+  </script>
+ </head>
+   <h2>Losuję!</h2>
+   <h3>Losuję nowe słowa.</h3>
+   <div class="center">{%for word in word_list%}{{word[0]}}<br/>{%endfor%}</div>
+ </body>
+</html>
