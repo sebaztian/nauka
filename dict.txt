@@ -421,11 +421,11 @@ xólodno -chłodno
 вку́сный - smaczny
 безвку́сный - bez smaku, niegustowny
 везде́ - wszędzie
-нигде́ - nigdzie
-никуда́ - nigdzie
+нигде́ - nigdzie(miejsce)
+никуда́ - nigdzie(kierunek)
 никуда́ не пое́хал - nigdzie nie pojechał
 о́зеро - jezioro
-возле - obok
+во́зле - obok
 поворо́т - skręt, obrót
 повора́чивать - skręcać
 повора́чивать нале́во - skręcać w lewo
