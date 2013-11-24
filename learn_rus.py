@@ -11,7 +11,7 @@ import os
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
-
+import nltk
 import random
 from flask import Flask,render_template,request,session,redirect
 word_list=[]
@@ -28,7 +28,7 @@ def check_session():
     if 'word_list' not in session:
         get_words_to_session()
             
-def get_words(number=25):
+def get_words(number=20):
     random_list=[]
     while (len(random_list)<number or len(random_list)==len(word_list)):
         random_word=word_list[random.randrange(0,len(word_list))]
@@ -36,7 +36,7 @@ def get_words(number=25):
             random_list.append(random_word)
     return random_list
 
-def get_words_to_session(number=25):
+def get_words_to_session(number=20):
     random_list=get_words(number)
     session['word_list']=random_list
 
@@ -77,8 +77,12 @@ def choose():
 @app.route("/translate", methods=['GET','POST'])
 def translate(wid=None):
     check_session()
-    if not wid:
-        wid=random.randrange(0,len(session['word_list']))
+    #if not wid:
+    #    wid=random.randrange(0,len(session['word_list']))
+    wid=0    
+    for counter in range( len(session['word_list'])):
+        if  session['word_list'][wid][2]>session['word_list'][counter][2]:
+            wid=counter
     return render_template('translate.html',word=session['word_list'][wid])
 
 
@@ -104,23 +108,27 @@ def add_points(points,word):
             break
     local_word_list[:] = [tup for tup in local_word_list if tup[2]<50]
     session['word_list']=local_word_list
-    print session['word_list']
+
 
 @app.route("/check", methods=['GET','POST'])    
 def check():   
     if request.form and 'answer' in request.form and 'question' in request.form:
         if request.form['answer'].strip()==request.form['question'].strip():
-            add_points(5,request.form['question'])
+            add_points(10,request.form['question'])
             if len(session['word_list'])==0:
                 return redirect('/change')
             return render_template('ok_reload.html')
-        quest=remove_stress_marks(request.form['question'])
-        answer=remove_stress_marks(request.form['answer'])
+        quest=remove_stress_marks(request.form['question'].strip())
+        answer=remove_stress_marks(request.form['answer'].strip())
         if answer==quest:     
             add_points(-1,request.form['question'])
             return "OK! Brakuje akcentu. "+request.form['question']
-    add_points(-3,request.form['question'])
-    return "NOT OK!!! "+request.form['question']
+
+    points=nltk.metrics.edit_distance(request.form['question'].strip(),request.form['answer'].strip())
+        
+    add_points((0-points),request.form['question'])
+
+    return "NOT OK!!! "+request.form['question']+"<p class='small'>-"+str(points)+"</p> "
 
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 

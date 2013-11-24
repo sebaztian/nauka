@@ -33,6 +33,12 @@
     color:#725532;
     text-align:center;
     }
+    .small
+    {
+    font-size:0.4em;
+    color:#725532;
+    text-align:center;
+    }
     div.bottom
     {
     background-color:#000;
@@ -87,7 +93,7 @@ width:100%
      <input type="submit" value="OK" class="ianswer"/>
    </form>
    </div>
-   <div  id="result"></div>
+   <div  id="result"><p class='small'>{{word[2]}} punktów</p></div>
    <div class="bottom">
    <input type="button" value="Następne" class="ibutton"  onclick="location.href='/translate'" />
    <input type="button" value="Etap I" class="ibutton"  onclick="location.href='/show'" />
