@@ -18,13 +18,14 @@ word_list=[]
 app = Flask(__name__)  
 
 def init():
-    dict_file='dict.txt'
-    split_sign='-'
+    dict_file='dicts/main.txt'
+    split_sign=';'
     if len(sys.argv)>1:
         dict_file=sys.argv[1]
    
     for line in open(dict_file,'r').readlines():
         if split_sign in line and line.strip()[0]!='#':
+
             split_res=line.split(split_sign)
             word_list.append([split_res[0].strip(),split_res[1].strip(),0])
 
