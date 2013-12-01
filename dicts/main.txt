@@ -75,7 +75,7 @@
 зажига́лка ; zapalniczka
 прище́пка ; spinacz
 во́лосы ; włosy
-гла́з;oko
+глаз;oko
 глаза́;oczy
 нос ; nos
 смотре́ть ; patrzeć, spoglądać, oglądać, przeglądać
@@ -339,7 +339,7 @@
 отту́да ; stamtąd
 когда́ ; kiedy
 когда́-нибу́дь ; kiedyś
-никогда ;  nigdy
+никогда́ ;  nigdy
 го́род ; miasto
 за́мок ; zamek (budowla)
 замо́к ; zamek (w drzwiach)
@@ -442,7 +442,7 @@ xólodno ;chłodno
 показывать ; pokazywać
 #пока́зывать ter. lp пока́зываю, пока́зываешь, пока́зывает; lm пока́зываем, пока́зываете, пока́зывают; przesz. lp пока́зывал / пока́зывала / пока́зывало; lm пока́зывали; rozk. lp пока́зывай
 де́вушка ; dziewczyna
-останусь ; zostanę
+оста́нусь ; zostanę
 оставаться ; zostawać
 #остава́ться ter. lp остаю́сь, остаёшься, остаётся; lm остаёмся, остаётесь, остаю́тся; :przesz. lp остава́лся / остава́лась / остава́лось; lm остава́лись; rozk. lp остава́йся; ims.
 остаться ;zostać
@@ -549,7 +549,7 @@ xólodno ;chłodno
 мечта́ть ; marzyć
 предложе́ние ; propozycja
 выбра́сывать ; wyrzucać
-выбросить ; wyrzucić
+вы́бросить ; wyrzucić
 предложе́ние;propozycja,oferta
 бу́дущее вре́мя;czas przyszły
 вы́бросить;wyrzucić
@@ -569,7 +569,7 @@ xólodno ;chłodno
 живо́тное;zwierzę 
 до́льше;dłuższy 
 коро́че; krótszy 
-расширить;rozszerzyć
+расши́рить;rozszerzyć
 лома́ть; psuć ,łamać
 слома́ть;zepsuć, złamać
 столо́вая;jadalnia

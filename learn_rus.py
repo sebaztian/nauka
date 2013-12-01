@@ -35,7 +35,9 @@ def check_session():
             
 def get_words(number=20):
     random_list=[]
-    while (len(random_list)<number or len(random_list)==len(word_list)):
+    if len(word_list)<=number :
+        return word_list
+    while (len(random_list)<number):
         random_word=word_list[random.randrange(0,len(word_list))]
         if random_word not in random_list:
             random_list.append(random_word)
