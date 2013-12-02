@@ -1,5 +1,5 @@
 сообще́ние;wiadomość, komunikat,połaczenie,komunikacja
-komunikacja;używać, korzystać, wykorzystywać
+по́льзоваться;używać, korzystać, wykorzystywać
 вид;wygląd, rodzaj
 кро́ме того́;oprócz tego
 опуска́ть;wrzucać ;opuszczać; zanurzać
@@ -45,11 +45,12 @@ komunikacja;używać, korzystać, wykorzystywać
 е́ду;jadę
 е́дешь;jedziesz
 е́дет;jedzie
-е́дем;jedzimy
+е́дем;jedziеmy
 е́дете;jedziecie
-е́дут;jadę
+е́дут;jadą
 е́хал;jechał
 е́хала;jechała
 е́хало; jechało
 е́хали; jechali
 пло́щадь;plac
+ра́но;wcześnie
