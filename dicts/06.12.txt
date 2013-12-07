@@ -2,10 +2,11 @@
 просклоня́ть; odmienić przez przypadki (dokonany)
 паде́ж;  przypadek (GRAM)
 имени́тельный;mianownik
-да́тельный;dopełniacz
-роди́тельный;celownik
+роди́тельный;dopełniacz
+да́тельный;celownik
+
 вини́тельный;biernik
-твори́тельный;celownik
+твори́тельный;narzędnik
 предло́жный;miejscownik
 
 
