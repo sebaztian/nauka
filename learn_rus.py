@@ -84,12 +84,18 @@ def choose():
 @app.route("/translate", methods=['GET','POST'])
 def translate(wid=None):
     check_session()
+
     #if not wid:
     #    wid=random.randrange(0,len(session['word_list']))
-    wid=0    
+    if 'prev_trans_word' in session and session['word_list'][0][0]==session['prev_trans_word'] and len(session['word_list'])>1:
+        wid=1
+    else:
+        wid=0    
     for counter in range( len(session['word_list'])):
-        if  session['word_list'][wid][2]>session['word_list'][counter][2]:
+        if  session['word_list'][wid][2]>session['word_list'][counter][2] and session['word_list'][counter][0]!=session['prev_trans_word']:
             wid=counter
+
+    session['prev_trans_word']=session['word_list'][wid][0]
     return render_template('translate.html',word=session['word_list'][wid])
 
 
