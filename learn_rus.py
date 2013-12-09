@@ -13,6 +13,8 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 import nltk
 import random
+import requests
+import re
 from flask import Flask,render_template,request,session,redirect
 word_list=[]
 app = Flask(__name__)  
@@ -98,6 +100,23 @@ def translate(wid=None):
     session['prev_trans_word']=session['word_list'][wid][0]
     return render_template('translate.html',word=session['word_list'][wid])
 
+@app.route("/wiki/<word>", methods=['GET','POST'])
+def get_wiktionary(word):
+    r = requests.get('http://ru.wiktionary.org/wiki/'+word)
+    html=r.text
+    search_list=[u"Им",u"Р",u"Д",u"В",u"Тв",u"Пр"]
+    resdict={}
+    try:
+        for search_element in search_list:
+            search_pattern = re.compile( search_element+u".</a></td>\s+<td bgcolor=\"\S+\">([^<]+)(<br />[^<]+)?</td>\s+<td bgcolor=\"\S+\">([^<]+)</td>", re.UNICODE )
+            search_res=search_pattern.search(html)
+            if search_res:
+                resdict[search_element+'1']=search_res.group(1)
+                resdict[search_element+'2']=search_res.group(3)
+    except Exception,e:
+        return str(e)
+    return render_template('wiktionary.html',resdict=resdict,case_list=search_list)
+    
 
 def remove_stress_marks(text):
     text=text.strip()
