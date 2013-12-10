@@ -36,3 +36,6 @@
 сре́дний род; rodzaj nijaki
 и́мя существи́тельное;rzeczownik
 и́мя прилага́тельное;przymiotnik
+мно́жественное число́;liczba mnoga
+еди́нственное число́; liczba pojedyńcza
+
