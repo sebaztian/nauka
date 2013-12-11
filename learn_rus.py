@@ -19,17 +19,22 @@ from flask import Flask,render_template,request,session,redirect
 word_list=[]
 app = Flask(__name__)  
 
-def init():
-    dict_file='dicts/main.txt'
-    split_sign=';'
-    if len(sys.argv)>1:
-        dict_file=sys.argv[1]
-   
+split_sign=';'
+
+def read_dict(dict_file):
     for line in open(dict_file,'r').readlines():
         if split_sign in line and line.strip()[0]!='#':
 
             split_res=line.split(split_sign)
-            word_list.append([split_res[0].strip(),split_res[1].strip(),0])
+            word_list.append([split_res[0].strip(),split_res[1].strip(),0])    
+
+def init():
+    
+    if len(sys.argv)>1:  
+        read_dict(sys.argv[1])
+        return
+    for dict_file in os.listdir('dicts/'):
+        read_dict('dicts/'+dict_file)
 
 def check_session():
     if 'word_list' not in session:
@@ -63,8 +68,13 @@ def change():
 @app.route("/show/<int:wid>", methods=['GET','POST'])
 def show(wid=None):
     check_session()
-    if not wid:
-        wid=random.randrange(0,len(session['word_list']))
+    if 'last_show_word' not in session:
+        session['last_show_word']=""
+    while not wid:    
+        wid_r=random.randrange(0,len(session['word_list']))
+        if session['last_show_word']!=session['word_list'][wid_r][0] and len(session['word_list'])>1:
+            wid=wid_r
+    session['last_show_word']=session['word_list'][wid][0]
     return render_template('show.html',word=session['word_list'][wid])
 
 
