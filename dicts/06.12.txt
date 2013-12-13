@@ -38,4 +38,9 @@
 и́мя прилага́тельное;przymiotnik
 мно́жественное число́;liczba mnoga
 еди́нственное число́; liczba pojedyńcza
+преподава́тель;nauczyciel, wykładowca
+переводи́ть;przeprowadzać, tłumaczyć
+по́льзоваться;korzystać 
+увлека́ться;interesować się, pasjonować się
+вещь;rzecz
 
