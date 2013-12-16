@@ -16,7 +16,7 @@
 ключева́я вода́;woda źródlana
 ключ;klucz,źródło
 ста́рый;stary
-Э́то старо́ как мир.;To jest stare jak świat.
+#Э́то старо́ как мир.;To jest stare jak świat.
 молодо́й;młody
 сме́ртная казнь;kara śmierci 
 но́вый;nowy 
@@ -66,8 +66,8 @@
 пече́нье;ciasteczko, herbatnik
 печь;piec
 #печь ter. lp пеку́, печёшь, печёт; lm печём, печёте, пеку́т; przesz. lp пёк / пекла́ / пекло́; lm пекли́; rozk. lp пеки́; ims. пеку́щий, пёкший, печёный
-обеденный;obiadowy
-обед;obiad
+обе́денный;obiadowy
+обе́д;obiad
 зака́зывать;zamawiać
 заказа́ть;zamówić
 ба́нка;bańka, puszka, słoik
