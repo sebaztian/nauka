@@ -166,7 +166,7 @@ def check():
             add_points(-1,request.form['question'])
             return "OK! Brakuje akcentu. "+request.form['question']
 
-    points=nltk.metrics.edit_distance(request.form['question'].strip(),request.form['answer'].strip())
+    points=nltk.metrics.edit_distance(request.form['question'].strip().lower(),request.form['answer'].strip().lower())
         
     add_points((0-points),request.form['question'])
 

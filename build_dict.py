@@ -11,8 +11,17 @@ import re
 import nltk
 
 def get_accent_for_word(word):
-    r = requests.get('http://ru.wiktionary.org/wiki/'+word)
-    html=r.text
+    not_download=1
+    while not_download:
+        try:
+            r = requests.get('http://ru.wiktionary.org/wiki/'+word,timeout=5)
+            html=r.text
+            not_download=False
+        except Exception,e:
+            print "Download error:%s"%(e,)
+            not_download+=1
+            if not_download>5:
+                return False
     clean_html=nltk.clean_html(html)
     search_pattern = re.compile( u'Им\.\s+(.*)', re.UNICODE )
     if u'Глагол' in clean_html:
@@ -29,8 +38,18 @@ def get_accent_for_word(word):
         return False
 
 def get_words(last_word=""):
-    r = requests.get('http://pl.wiktionary.org/w/index.php?title=Kategoria:rosyjski_%28indeks%29&pagefrom='+last_word)
-    html=r.text
+    print "get_words(%s)"%(last_word,)
+    not_download=1
+    while not_download:
+        try:
+            r = requests.get('http://pl.wiktionary.org/w/index.php?title=Kategoria:rosyjski_%28indeks%29&pagefrom='+last_word,timeout=5)
+            html=r.text
+            not_download=False
+        except Exception,e:
+            print "Download error:%s"%(e,)
+            not_download+=1
+            if not_download>5:
+                return False
     #<li><a href="/wiki/%D0%B0%D0%B1%D0%B1%D0%B0%D1%82" title="аббат">аббат</a></li>
     search_pattern = re.compile( '<li><a href="/wiki/\S+" title="([^\"]+)">([^<]+)</a></li>', re.UNICODE )
     word_list=[]    
@@ -40,9 +59,17 @@ def get_words(last_word=""):
     return word_list
 
 def get_translation(word):
-    r = requests.get('http://pl.wiktionary.org/wiki/'+word)
-    html=r.text
-    
+    not_download=1
+    while not_download:
+        try:
+            r = requests.get('http://pl.wiktionary.org/wiki/'+word,timeout=5)
+            html=r.text
+            not_download=False
+        except Exception,e:
+            print "Download error:%s"%(e,)
+            not_download+=1
+            if not_download>5:
+                return False    
     
     clean_html=nltk.clean_html(html)
     
@@ -59,16 +86,19 @@ while last_word:
     unstressed_word_list=get_words(last_word)
     stressed_list=[]
     for unstressed_word in unstressed_word_list:
+        if last_word==unstressed_word:
+            last_word=False
+            continue
         stressed=get_accent_for_word(unstressed_word)
         translation=get_translation(unstressed_word)
         if stressed and translation:    
             stressed_list.append([stressed,translation])
+    else:
+        if last_word==unstressed_word:
+            last_word=False
+        else:
+            last_word=unstressed_word
     with open('wiki_dict.txt', 'a') as f:
         for word, translation in stressed_list:
             
             f.write(word+';'+translation+'\n')
-        else:
-            if last_word==word:
-                last_word=False
-            else:
-                last_word=word
