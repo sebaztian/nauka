@@ -88,7 +88,6 @@ def change():
     
     try:
         get_words_to_session()
-        print session
         return render_template('change.html',word_list=session['word_list'])
     except Exception,e:
         return str(e)        
@@ -100,7 +99,6 @@ def change():
 def show(wid=None):
     
     check_session()
-    print session
     if 'last_show_word' not in session:
         session['last_show_word']=""
     while not wid:    
