@@ -16,14 +16,17 @@ import random
 import requests
 import re
 from flask import Flask,render_template,request,session,redirect
-from simplekv.fs import FilesystemStore
+from redis_session import RedisSessionInterface
+#from simplekv.fs import FilesystemStore
 #from simplekv.memory import DictStore
-from flaskext.kvsession import KVSessionExtension
+#from flaskext.kvsession import KVSessionExtension
 
 app = Flask(__name__)  
-store = FilesystemStore('./kvdata')
+#store = FilesystemStore('./kvdata')
 #store = DictStore()
-KVSessionExtension(store, app)
+#KVSessionExtension(store, app)
+
+app.session_interface = RedisSessionInterface()
 
 split_sign=';'
 word_list=[]
