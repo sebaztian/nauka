@@ -57,15 +57,8 @@ width:100%
     var answer=$('#ianwser').val();
     if (answer.indexOf("'") > -1)
 {
-        answer=answer.replace("я'","я́");
-        answer=answer.replace("е'","е́");
-        answer=answer.replace("ы'","ы́");
-        answer=answer.replace("о'","о́");
-        answer=answer.replace("у'","у́");
-        answer=answer.replace("а'","а́");
-        answer=answer.replace("и'","и́");
-        answer=answer.replace("ю'","ю́");
-        answer=answer.replace("э'","э́");
+        answer=answer.replace("'","\u0301");
+
         $('#ianwser').val(answer);
 }
     

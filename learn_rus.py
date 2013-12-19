@@ -16,17 +16,26 @@ import random
 import requests
 import re
 from flask import Flask,render_template,request,session,redirect
-word_list=[]
+from simplekv.fs import FilesystemStore
+#from simplekv.memory import DictStore
+from flaskext.kvsession import KVSessionExtension
+
 app = Flask(__name__)  
+store = FilesystemStore('./kvdata')
+#store = DictStore()
+KVSessionExtension(store, app)
 
 split_sign=';'
+word_list=[]
+
+
 
 def read_dict(dict_file):
     for line in open(dict_file,'r').readlines():
         if split_sign in line and line.strip()[0]!='#':
 
-            split_res=line.split(split_sign)
-            word_list.append([split_res[0].strip(),split_res[1].strip(),0])    
+            split_res=line.partition(split_sign)
+            word_list.append([split_res[0].strip(),split_res[2].strip(),0])
 
 def init():
     
@@ -37,7 +46,7 @@ def init():
         read_dict('dicts/'+dict_file)
 
 def check_session():
-    if 'word_list' not in session:
+    if 'word_list' not in session or not session['word_list']:
         get_words_to_session()
             
 def get_words(number=20):
@@ -52,7 +61,19 @@ def get_words(number=20):
 
 def get_words_to_session(number=20):
     random_list=get_words(number)
+    if 'word_list' in session:
+        del session['word_list']
     session['word_list']=random_list
+
+def count_vowels(word):
+    counter=0    
+    word_lower=word.lower()
+    vowels=set(u'аеыуиоэюяё')
+    for character in word_lower:
+        if character in vowels:
+            counter+=1
+    return counter
+
 
 @app.route("/") 
 def menu():  
@@ -60,14 +81,23 @@ def menu():
     return render_template('main.html') 
 
 @app.route("/change") 
-def change():  
-    get_words_to_session()
-    return render_template('change.html',word_list=session['word_list'])
+def change():
+    
+    try:
+        get_words_to_session()
+        print session
+        return render_template('change.html',word_list=session['word_list'])
+    except Exception,e:
+        return str(e)        
+
+
 
 @app.route("/show", methods=['GET','POST'])
 @app.route("/show/<int:wid>", methods=['GET','POST'])
 def show(wid=None):
+    
     check_session()
+    print session
     if 'last_show_word' not in session:
         session['last_show_word']=""
     while not wid:    
@@ -130,6 +160,7 @@ def get_wiktionary(word):
 
 def remove_stress_marks(text):
     text=text.strip()
+    """
     text=text.replace('я́','я')
     text=text.replace('е́','е')
     text=text.replace('ы́','ы')
@@ -139,6 +170,8 @@ def remove_stress_marks(text):
     text=text.replace('ю́','ю')
     text=text.replace('э́','э')   
     text=text.replace('а́','а')
+    """
+    text=text.replace(unichr(0x301),'')
     return text
 
 
@@ -155,14 +188,16 @@ def add_points(points,word):
 @app.route("/check", methods=['GET','POST'])    
 def check():   
     if request.form and 'answer' in request.form and 'question' in request.form:
-        if request.form['answer'].strip()==request.form['question'].strip():
+        if request.form['answer'].strip().lower()==request.form['question'].strip().lower():
             add_points(10,request.form['question'])
             if len(session['word_list'])==0:
                 return redirect('/change')
             return render_template('ok_reload.html')
         quest=remove_stress_marks(request.form['question'].strip())
         answer=remove_stress_marks(request.form['answer'].strip())
-        if answer==quest:     
+        if answer==quest:
+            if count_vowels(quest)<2:
+                return render_template('ok_reload.html')
             add_points(-1,request.form['question'])
             return "OK! Brakuje akcentu. "+request.form['question']
 
@@ -172,7 +207,7 @@ def check():
 
     return "NOT OK!!! "+request.form['question']+"<p class='small'>-"+str(points)+"</p> "
 
-app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+app.secret_key = 'A0Zr9rj/3yX R~XHH!jmN]LWX/,?RT'
 
 if __name__ == "__main__":  
     init()

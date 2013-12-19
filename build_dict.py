@@ -9,6 +9,17 @@ sys.setdefaultencoding("utf-8")
 import requests
 import re
 import nltk
+import HTMLParser
+
+
+def count_vowels(word):
+    counter=0    
+    word_lower=word.lower()
+    vowels=set(u'аеыуиоэюяё')
+    for character in word_lower:
+        if character in vowels:
+            counter+=1
+    return counter
 
 def get_accent_for_word(word):
     not_download=1
@@ -72,7 +83,12 @@ def get_translation(word):
                 return False    
     
     clean_html=nltk.clean_html(html)
-    
+    h = HTMLParser.HTMLParser()
+    clean_html=h.unescape(clean_html)
+    with open('wiki_translation.txt', 'a') as f:
+        f.write('--------------\n%s:\n-------------'%(word,))
+        f.write(clean_html)
+        
     clean_html=clean_html[clean_html.find(u'język rosyjski ) [ edytuj ]'):]
     clean_html=clean_html[:clean_html.find(u'odmiana')]
     trasnlation_search=re.search('znaczenia\s*\:\s+(.*)',clean_html,re.DOTALL)
@@ -81,7 +97,10 @@ def get_translation(word):
         return translation
     return False
 
-last_word='а'
+if len(sys.argv)>1:  
+    last_word=sys.argv[1]
+else:    
+    last_word='а'
 while last_word:
     unstressed_word_list=get_words(last_word)
     stressed_list=[]
