@@ -195,18 +195,16 @@ def add_points(points,word):
 @app.route("/check", methods=['GET','POST'])    
 def check():   
     if request.form and 'answer' in request.form and 'question' in request.form:
-        print "1"
         if request.form['answer'].strip().lower()==request.form['question'].strip().lower():
-            print "poprawna odp"
             add_points(10,request.form['question'])
             if len(session['word_list'])==0:
                 return redirect('/change')   
             return render_template('ok_reload.html')
-        print "2"
         quest=remove_stress_marks(request.form['question'].strip())
         answer=remove_stress_marks(request.form['answer'].strip())
         if answer==quest:
             if count_vowels(quest)<2:
+                add_points(10,request.form['question'])
                 return render_template('ok_reload.html')
             add_points(-1,request.form['question'])
             return "OK! Brakuje akcentu. "+request.form['question']
