@@ -180,8 +180,14 @@ def add_points(points,word):
     local_word_list=session['word_list']
     for element in local_word_list:
         if element[0]==word:
+            print element[0]
+            print element[2]
             element[2]+=points
+            print element[2]
             break
+    else:
+        print "doszło do końca"
+
     local_word_list[:] = [tup for tup in local_word_list if tup[2]<50]
     session['word_list']=local_word_list
 
@@ -189,11 +195,14 @@ def add_points(points,word):
 @app.route("/check", methods=['GET','POST'])    
 def check():   
     if request.form and 'answer' in request.form and 'question' in request.form:
+        print "1"
         if request.form['answer'].strip().lower()==request.form['question'].strip().lower():
+            print "poprawna odp"
             add_points(10,request.form['question'])
             if len(session['word_list'])==0:
-                return redirect('/change')
+                return redirect('/change')   
             return render_template('ok_reload.html')
+        print "2"
         quest=remove_stress_marks(request.form['question'].strip())
         answer=remove_stress_marks(request.form['answer'].strip())
         if answer==quest:
