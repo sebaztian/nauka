@@ -180,14 +180,8 @@ def add_points(points,word):
     local_word_list=session['word_list']
     for element in local_word_list:
         if element[0]==word:
-            print element[0]
-            print element[2]
             element[2]+=points
-            print element[2]
             break
-    else:
-        print "doszło do końca"
-
     local_word_list[:] = [tup for tup in local_word_list if tup[2]<50]
     session['word_list']=local_word_list
 
