@@ -31,7 +31,7 @@ app.session_interface = RedisSessionInterface()
 split_sign=';'
 word_list=[]
 
-
+max_points=50
 
 def read_dict(dict_file):
     for line in open(dict_file,'r').readlines():
@@ -93,6 +93,22 @@ def change():
         return str(e)        
 
 
+def weighted_choice_king(weights):
+    total = 0
+    winner = 0
+    for i, w in enumerate(weights):
+        total += w
+        if random.random() * total < w:
+            winner = i
+    return winner
+
+def get_random_word_to_translate():
+    weights=[]
+    for element in session['word_list']:
+        weights.append(max_points-element[2])
+    return weighted_choice_king(weights)
+        
+
 
 @app.route("/show", methods=['GET','POST'])
 @app.route("/show/<int:wid>", methods=['GET','POST'])
@@ -130,14 +146,13 @@ def translate(wid=None):
 
     #if not wid:
     #    wid=random.randrange(0,len(session['word_list']))
-    if 'prev_trans_word' in session and session['word_list'][0][0]==session['prev_trans_word'] and len(session['word_list'])>1:
-        wid=1
+    if len(session['word_list'])==1:
+        wid=0
     else:
-        wid=0    
-    for counter in range( len(session['word_list'])):
-        if  session['word_list'][wid][2]>session['word_list'][counter][2] and session['word_list'][counter][0]!=session['prev_trans_word']:
-            wid=counter
-
+        wid=get_random_word_to_translate()
+        if 'prev_trans_word' in session:
+            while session['prev_trans_word']==wid:
+                wid=get_random_word_to_translate()
     session['prev_trans_word']=session['word_list'][wid][0]
     return render_template('translate.html',word=session['word_list'][wid])
 
@@ -182,7 +197,7 @@ def add_points(points,word):
         if element[0]==word:
             element[2]+=points
             break
-    local_word_list[:] = [tup for tup in local_word_list if tup[2]<50]
+    local_word_list[:] = [tup for tup in local_word_list if tup[2]<max_points]
     session['word_list']=local_word_list
 
 
