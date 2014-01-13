@@ -151,8 +151,9 @@ def translate(wid=None):
     else:
         wid=get_random_word_to_translate()
         if 'prev_trans_word' in session:
-            while session['prev_trans_word']==wid:
+            while session['prev_trans_word']==session['word_list'][wid][0]:
                 wid=get_random_word_to_translate()
+
     session['prev_trans_word']=session['word_list'][wid][0]
     return render_template('translate.html',word=session['word_list'][wid])
 
