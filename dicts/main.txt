@@ -388,7 +388,7 @@
 пого́да     ;     pogoda
 дождь ;deszcz
 жа́рко ;  gorąco
-хо́лодно ;chłodno
+хо́лодно ;(1.1) zimno (1.2) przen. chłodno, ozięble 
 тепло́;ciepło
 зонт;parasol
 спа́льный мешо́к ; śpiwór (2 słowa)
